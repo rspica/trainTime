@@ -93,18 +93,6 @@ console.log("TrainData.ref: " + "trainName: " + tName + ' ' + "traintime: " + tF
     var nextTrain = moment().add(tMinutesTillTrain, "minutes");
     console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
 
-      // // pushed back 1 year to make sure it comes before current time
-      // var convertedTime = moment(childSnapshot.val().firstTrain, 'hh:mm').subtract(1, 'years');
-      // var trainTime = moment(convertedDate).format('HH:mm');
-      // var currentTime = moment();
-      // // pushed back 1 year to make sure it comes before current time
-      // var firstTimeConverted = moment(trainTime, 'hh:mm').subtract(1, 'years');
-      // var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-      // var tRemainder = diffTime % tfrequency;
-      // //solved
-      // var tMinutesTillTrain = tfrequency - tRemainder;
-      // //solved
-      // var nextTrain = moment().add(tMinutesTillTrain, 'minutes').format('HH:mm')
 
       // Change the HTML to reflect next train
       var tr = $("<tr>")
