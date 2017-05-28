@@ -5,12 +5,10 @@
     <meta charset="UTF-8">
     <title>TrainTime</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada:700|Montserrat:300,700|Playfair+Display:400,500" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./assets/style.css">
@@ -26,25 +24,26 @@
     <br>
     <div class="col-md-12">
         <div class="container">
-            <h2 class="schdHead">Current Train Schedule</h2>
-            <table id="schedule" class="striped">
+            <div class="schdHead">
+                <h2>Current Train Schedule</h2>
+            </div>
+            <table>
                 <thead>
-                    <tr>
-                        <th class="table-head" data-field="train">Train Name</th>
-                        <th class="table-head" data-field="name">Destination</th>
-                        <th class="table-head" data-field="frequency">Frequency (mins)</th>
-                        <th class="table-head" data-field="arrival">Next Arrival</th>
-                        <th class="table-head" data-field="mAway">Minutes Away</th>
+                    <tr id="schedule">
+                        <th class="table-head">Train Name</th>
+                        <th class="table-head">Destination</th>
+                        <th class="table-head">Frequency (mins)</th>
+                        <th class="table-head">Next Arrival</th>
+                        <th class="table-head">Minutes Away</th>
                     </tr>
                 </thead>
-                <hr>
                 <tbody>
                 </tbody>
             </table>
             <br>
             <div class="inputContainer">
                 <div class="panelHead">
-                    <h3 class="panel-title">Add Train</h3>
+                    <h3>Add Train</h3>
                 </div>
                 <div class="inputPanel">
                     <!-- train input Form -->
@@ -59,13 +58,12 @@
                         </div>
                         <div class="form-group">
                             <label for="frequency-input">Frequency:</label>
-                            <input class="input-control" id="frequency-input" type="number" placeholder="Enter timein minutes">
+                            <input class="input-control" id="frequency-input" type="text" placeholder="Enter time in minutes">
                         </div>
                         <div class="form-group">
                             <label for="trainTime-input">First Train Time:</label>
                             <input class="input-control" id="arrive-input" type="text" placeholder="Enter time as military time: 24 hrs : 00 min)"></input>
                         </div>
-                        
                         <button id="addTrain-btn" type="submit">Submit Train</button>
                     </form>
                 </div>
@@ -75,9 +73,8 @@
         </div>
         <!-- closes main container -->
     </div>
-     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-     <script type="text/javascript" src="./assets/trainTime.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script type="text/javascript" src="./assets/trainTime.js"></script>
 </body>
 
 </html>
