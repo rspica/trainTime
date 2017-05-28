@@ -1,0 +1,52 @@
+body {
+	font: 1em 'Montserrat', sans-serif;
+}
+
+.headContainer {
+	font: 4em 'Montserrat Subrayada', sans-serif;
+	padding: 20px 5%;
+	color: rgba(255, 255, 255, .8);
+	background: rgba(252, 195, 11, 1);
+}
+
+.subHead {
+	font: .4em 'Montserrat', sans-serif;
+}
+
+.tDataList {
+	font: .9em 'Montserrat', sans-serif;
+
+}
+.schdHead, .panelHead {
+	font-family: 'Playfair Display', serif;
+}
+
+.table-head {
+	padding: 0 20px 5px 0;
+}
+
+form:first-child {
+	margin-top: 30px;
+}
+
+.input-control {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	background: rgba(0, 0, 0, .1);
+	border: 0;
+}
+
+.input-control::placeholder {
+	font-size: 1.1em;
+	color: rgb(175,175,175);
+}
+
+#addTrain-btn {
+	margin-top: 20px;
+	padding: 15px;
+	font-size: 1.5em;
+	font-weight: 500;
+	background: rgba(30, 210, 182, 1);
+	border: 0;
+}
