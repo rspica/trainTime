@@ -28,7 +28,6 @@
       tFrequency = $("#frequency-input").val().trim();
 
 
-
       TrainData.ref().push({ // pushes input values to firebase
           trainName: tName,
           destination: destination,
@@ -37,7 +36,7 @@
       });
 
       console.log("TrainData.ref: " + "trainName: " + tName + ' ' + "traintime: " + tFrequency);
-      
+
 // clears input after entry
       $("#trainName-input").val("");
       $("#destination-input").val("");
@@ -67,21 +66,28 @@
       var lastObj = sv[lastKey]
 
       // Console.loging the last user's data
-      console.log(lastObj.trainName);
-      console.log(lastObj.destination);
-      console.log(lastObj.arrive);
-      console.log(lastObj.tFrequency);
+      // console.log(lastObj.trainName);
+      // console.log(lastObj.destination);
+      // console.log(lastObj.arrive);
+      // console.log(lastObj.tFrequency);
 
-
-
-
+      // pushed back 1 year to make sure it comes before current time
+      var convertedDate = moment(childSnapshot.val().firstTrain, 'hh:mm').subtract(1, 'years');
+      var trainTime = moment(convertedDate).format('HH:mm');
+      var currentTime = moment();
+      // pushed back 1 year to make sure it comes before current time
+      var firstTimeConverted = moment(trainTime, 'hh:mm').subtract(1, 'years');
+      var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+      var tRemainder = diffTime % tfrequency;
+      //solved
+      var tMinutesTillTrain = tfrequency - tRemainder;
+      //solved
+      var nextTrain = moment().add(tMinutesTillTrain, 'minutes').format('HH:mm')
 
       // Change the HTML to reflect next train
       var tr = $("<tr>")
       $("tbody").prepend(tr);
       tr.html("<td>" + lastObj.trainName + "<td>" + lastObj.destination + "<td>" + lastObj.tFrequency + "<td>" + lastObj.arrive + "<td>" + lastObj.tMinutesTillTrain);
-
-
       
       // Handle the errors
   }, function(errorObject) {
